@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine Special</title>
+
+<style>
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #ffe6eb;
+    color: #660000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+section {
+    display: none;
+    padding: 50px;
+    min-height: 100vh;
+}
+
+section.active {
+    display: block;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+img {
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 0 20px #ffb3c6;
+}
+
+#home img {
+    width: 90vw;
+    max-height: 80vh;
+}
+
+.signature {
+    font-size: 3em;
+    color: #ff3366;
+    font-weight: 600;
+}
+
+#about img,
+#special img {
+    width: 200px;
+}
+
+.big-text {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.cursive-question {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    margin-top: 20px;
+}
+
+#bigquestion img {
+    width: 280px;
+    display: block;
+    margin: 20px auto 5px;
+}
+
+.signature-under {
+    font-size: 1.2em;
+    color: #ff3366;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #ff6699;
+    color: white;
+}
+
+button:hover {
+    background-color: #cc3366;
+    transform: scale(1.1);
+}
+
+.nav-btn {
+    background-color: #ffe6f0;
+    color: #ff3366;
+}
+
+@keyframes heartbeat {
+    0%, 50%, 100% { transform: scale(1); }
+    25%, 75% { transform: scale(1.1); }
+}
+
+#yesBtn.pulse {
+    animation: heartbeat 1s infinite;
+}
+
+textarea {
+    width: 50%;
+    height: 100px;
+    margin-top: 20px;
+    font-size: 1.1em;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Times New Roman', serif;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#flowerImg {
+    width: 300px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+
+@keyframes floatHeart {
+    from { transform: translateY(0) rotate(45deg); opacity: 1; }
+    to { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+}
+
+#popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6699;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    display: none;
+    z-index: 2000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="coldplay.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="playMusic()">🎵 Play Background Music</button>
+
+<section id="home" class="active">
+<h1>Welcome Baby!</h1>
+<p>Langga, I’m so happy that you’re here. Your time and presence brings so much happiness, I hope you enjoy this special place for you.</p>
+<img src="pb1.jpg">
+<div class="signature">Cha and Khia</div>
+</section>
+
+<section id="about">
+<h1>About Us</h1>
+<p>Hi baby! From the moment our paths crossed, I knew that there was something special about you. Every moment we’ve shared has been filled with laughter, love, and unforgettable memories. I cherish all our late-night chats, videocalls, and the way we can be happy together as if nothing else matters. Langga, your love, care, patience, and support mean everything to me. I’m so grateful to share my life with you. I hope for a beautiful future together, filled with love, understanding, and patience. I love you so much, baby!</p>
+<img src="memo1.jpg"><img src="memo2.jpg"><img src="memo3.jpg">
+</section>
+
+<section id="special">
+<h1>I Love About You</h1>
+<p>I find new reasons to love you more every day. Your kind heart and beautiful soul are what I adore the most. You guide me and inspire me every day to be a better person, girlfriend, friend, and best friend. You make everything easier and better, and I thank you for being my safest place. Baby, I’m so grateful for you, for making sure I feel loved, seen, valued, and heard. Thank you for everything, love!</p>
+<img src="memo4.jpg"><img src="memo5.jpg"><img src="old.jpg">
+</section>
+
+<section id="bigquestion">
+<h1>The Big Question</h1>
+<p>Hi baby! We know that it’s our 3rd Valentine’s together, and I really love celebrating Valentine’s Day with you by my side. I also want to make sure and ask for your permission, hehe.</p>
+<p class="big-text">Baby, you make my heart very happy always,</p>
+<p class="cursive-question">would you do me the honor of being my Valentine?🥹</p>
+<img src="cute.jpg">
+<p class="signature-under">-Cha</p>
+</section>
+
+<section id="letmeknow">
+<h1>Let Me Know</h1>
+<p>I can’t wait to know what your response will be. Take your time, baby!😉</p>
+<button id="yesBtn" class="pulse">YES</button>
+<button id="noBtn">NO</button>
+
+<form id="thoughtsForm" action="https://formspree.io/f/mbdarerd" method="POST">
+    <textarea name="message" placeholder="Leave your thoughts or message here..." required></textarea>
+    <br>
+    <button type="submit">Send Message</button>
+</form>
+
+<img id="flowerImg" src="flower.jpg">
+</section>
+
+<div>
+<button class="nav-btn" onclick="showSection(0)">Home</button>
+<button class="nav-btn" onclick="showSection(1)">About Us</button>
+<button class="nav-btn" onclick="showSection(2)">I Love About You</button>
+<button class="nav-btn" onclick="showSection(3)">The Big Question</button>
+<button class="nav-btn" onclick="showSection(4)">Let Me Know</button>
+</div>
+
+<div id="popup">Message sent! ❤️</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+function playMusic() {
+    const music = document.getElementById("bgMusic");
+    music.volume = 0.4;
+    music.play();
+}
+
+const sections = ['home','about','special','bigquestion','letmeknow'];
+function showSection(i) {
+    sections.forEach(id => document.getElementById(id).classList.remove('active'));
+    document.getElementById(sections[i]).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.getElementById('thoughtsForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: { 'Accept': 'application/json' }
+    }).then(() => {
+        document.getElementById('popup').style.display = 'block';
+        setTimeout(() => popup.style.display = 'none', 3000);
+        this.reset();
+    });
+});
+
+setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.animation = `floatHeart ${5 + Math.random() * 5}s linear forwards`;
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+}, 500);
+</script>
+
+</body>
+</html>
